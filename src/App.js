@@ -20,6 +20,11 @@ const App = () => {
   // Función para añadir una nueva tarea al estado 
   const addTodo = (e) => {
     e.preventDefault();
+    // Verifica si newTodo está vacío
+    if (newTodo.trim() === "") {
+      alert("Por favor, escribe una tarea.");
+      return;
+    }
     setTodos([...todos, { text: newTodo, completed: false }]);
     setNewTodo("");
   };
